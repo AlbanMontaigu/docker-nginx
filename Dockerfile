@@ -16,7 +16,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Customization
 RUN apt-get update \
-	&& apt-get -y upgrade
+	&& apt-get -y upgrade \
 	&& mkdir -p /etc/nginx/sites-enabled \
 	&& rm -f /etc/nginx/conf.d/*.conf
 
