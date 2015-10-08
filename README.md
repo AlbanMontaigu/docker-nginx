@@ -4,7 +4,7 @@
 
 This image aims to be my personal nginx front server but you can use it if you want.
 
-Mainly it is configured by default to act as a **proxy server** and espacially (but no exclusive) for php applications when linked with a container from [nginx-php](https://hub.docker.com/r/amontaigu/nginx-php/).
+Mainly it is configured by default to act as a **proxy server** and especially (but not exclusive) for php applications when linked with a container from [nginx-php](https://hub.docker.com/r/amontaigu/nginx-php/).
 
 ## References and documentation
 
@@ -16,7 +16,7 @@ Mainly it is configured by default to act as a **proxy server** and espacially (
 
 ## Getting the source
 
-On GitHub with my [docker-nginx](https://github.com/AlbanMontaigu/docker-nginx).
+On GitHub with my [docker-nginx](https://github.com/AlbanMontaigu/docker-nginx) project.
 
 ## You could be interested by
 
