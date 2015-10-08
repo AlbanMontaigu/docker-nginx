@@ -14,7 +14,7 @@ Mainly it is configured by default to act as a **proxy server** and espacially (
 * [Some ngninx php image](https://github.com/ngineered/nginx-php-fpm)
 * [Some configuration reference to improve performance](http://tweaked.io/guide/nginx/)
 
-## Getting the source.
+## Getting the source
 
 On GitHub with my [docker-nginx](https://github.com/AlbanMontaigu/docker-nginx).
 
