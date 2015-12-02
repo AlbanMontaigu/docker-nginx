@@ -6,7 +6,7 @@
 # ==========================================================================
 
 # Base image
-FROM nginx:1.9.6
+FROM nginx:1.9.7
 
 # Maintainer
 MAINTAINER alban.montaigu@gmail.com
