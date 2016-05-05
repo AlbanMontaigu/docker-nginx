@@ -11,7 +11,6 @@ echo >&2 "[INFO] pwd : $(pwd)"
 # Workaround to allow nginx to get dns name server from /etc/resolv.conf
 # (this will allow nginx getting dynamically docker embedded dns ip or custom dns config)
 # @see http://serverfault.com/questions/638822/nginx-resolver-address-from-etc-resolv-conf
-# Who and where am I ?
 echo >&2 "[INFO] ---------------------------------------------------------------"
 echo >&2 "[INFO] GENERATING resolv.conf FILE FOR NGINX"
 echo >&2 "[INFO] ---------------------------------------------------------------"
