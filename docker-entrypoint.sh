@@ -15,7 +15,7 @@ echo >&2 "[INFO] ---------------------------------------------------------------
 echo >&2 "[INFO] GENERATING resolv.conf FILE FOR NGINX"
 echo >&2 "[INFO] ---------------------------------------------------------------"
 echo resolver $(awk 'BEGIN{ORS=" "} $1=="nameserver" {print $2}' /etc/resolv.conf) ";" > /etc/nginx/conf.d/resolvers.conf
-echo >&2 "[INFO] $(cat /etc/nginx/conf.d/resolvers.conf)
+echo >&2 "[INFO] $(cat /etc/nginx/conf.d/resolvers.conf)"
 
 # Exec main command
 exec "$@"
