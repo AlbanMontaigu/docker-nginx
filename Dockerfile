@@ -26,7 +26,7 @@ COPY ./conf/sites-enabled /etc/nginx/sites-enabled
 COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 
 # Entrypoint to enable live customization
-ADD docker-entrypoint.sh /docker-entrypoint.sh
+COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 # grr, ENTRYPOINT resets CMD now
 ENTRYPOINT ["/docker-entrypoint.sh"]
