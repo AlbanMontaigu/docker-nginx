@@ -15,9 +15,7 @@ MAINTAINER alban.montaigu@gmail.com
 ENV DEBIAN_FRONTEND noninteractive
 
 # Customization
-RUN apt-get update \
-    && apt-get -y upgrade \
-    && mkdir -p /etc/nginx/sites-enabled \
+RUN mkdir -p /etc/nginx/sites-enabled \
     && rm -f /etc/nginx/conf.d/*.conf
 
 # Custom nginx configuration files
