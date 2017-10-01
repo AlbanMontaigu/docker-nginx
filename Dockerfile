@@ -6,10 +6,10 @@
 # ==========================================================================
 
 # Base image
-FROM nginx:1.13.0
+FROM nginx:1.13.5-alpine
 
 # Maintainer
-MAINTAINER alban.montaigu@gmail.com
+LABEL maintainer="alban.montaigu@gmail.com"
 
 # Let the conatiner know that there is no tty
 ENV DEBIAN_FRONTEND noninteractive

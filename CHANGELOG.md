@@ -1,4 +1,8 @@
 
+## 1.13.5 (2017-10-02)
+- Update to nginx 1.13.5 **alpine** version
+- Update deprecated MAINTAINER tag to LABEL
+
 ## 1.13.0 (2017-05-09)
 - Update to nginx 1.13.0
 
