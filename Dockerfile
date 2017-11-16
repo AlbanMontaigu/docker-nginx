@@ -6,13 +6,10 @@
 # ==========================================================================
 
 # Base image
-FROM nginx:1.13.5-alpine
+FROM nginx:1.13.6-alpine
 
 # Maintainer
 LABEL maintainer="alban.montaigu@gmail.com"
-
-# Let the conatiner know that there is no tty
-ENV DEBIAN_FRONTEND noninteractive
 
 # Customization
 RUN mkdir -p /etc/nginx/sites-enabled \
