@@ -11,6 +11,6 @@
 
 # Test nginx version
 @test "Nginx version is ${NGINX_VERSION}" {
-	result="$(docker run --entrypoint=/bin/sh ${DOCKER_APP_IMAGE_NAME} -c '/usr/sbin/nginx -v')"
+	result="$(docker run --entrypoint=/bin/sh ${DOCKER_APP_IMAGE_NAME} -c '/usr/sbin/nginx -v 2>&1')"
 	[[ "$result" == *"nginx version: nginx/${NGINX_VERSION}"* ]]
 }
