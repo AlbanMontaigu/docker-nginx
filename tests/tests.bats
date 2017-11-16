@@ -11,6 +11,6 @@
 
 # Test nginx version
 @test "Terraform version is ${NGINX_VERSION}" {
-	result="$(docker run ${DOCKER_APP_IMAGE_NAME} version)"
-	[[ "$result" == *"Terraform v${NGINX_VERSION}"* ]]
+	result="$(docker run ${DOCKER_APP_IMAGE_NAME} nginx -v)"
+	[[ "$result" == *"nginx version: nginx/${NGINX_VERSION}"* ]]
 }
