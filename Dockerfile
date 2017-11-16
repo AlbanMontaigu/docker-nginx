@@ -11,8 +11,17 @@ FROM nginx:1.13.6-alpine
 # Maintainer
 LABEL maintainer="alban.montaigu@gmail.com"
 
+# ensure www-data user exists for php compatibility
+RUN set -x \
+	&& addgroup -g 82 -S www-data \
+	&& adduser -u 82 -D -S -G www-data www-data \
+# 82 is the standard uid/gid for "www-data" in Alpine
+# http://git.alpinelinux.org/cgit/aports/tree/main/apache2/apache2.pre-install?h=v3.3.2
+# http://git.alpinelinux.org/cgit/aports/tree/main/lighttpd/lighttpd.pre-install?h=v3.3.2
+# http://git.alpinelinux.org/cgit/aports/tree/main/nginx-initscripts/nginx-initscripts.pre-install?h=v3.3.2
+
 # Customization
-RUN mkdir -p /etc/nginx/sites-enabled \
+    && mkdir -p /etc/nginx/sites-enabled \
     && rm -f /etc/nginx/conf.d/*.conf
 
 # Custom nginx configuration files
