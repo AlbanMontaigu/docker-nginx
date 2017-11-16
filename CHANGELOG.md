@@ -2,6 +2,7 @@
 ## 1.13.6 (2017-11-16)
 - Update to nginx 1.13.6 **alpine** version
 - Update deprecated MAINTAINER tag to LABEL
+- CircleCI added
 
 ## 1.13.0 (2017-05-09)
 - Update to nginx 1.13.0
