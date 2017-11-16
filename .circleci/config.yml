@@ -71,7 +71,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-            export TERRAFORM_VERSION="$(sed -nre 's/^.*TERRAFORM_VERSION="([^"]+)".*$/\1/p;' Dockerfile | head -1)"
+            export NGINX_VERSION="$(sed -nre 's/^FROM nginx:(.+)-alpine$/\1/p;' Dockerfile | head -1)"
             bats tests
 
 # --------------------------------------------
