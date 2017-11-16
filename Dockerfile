@@ -23,6 +23,10 @@ COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 # Entrypoint to enable live customization
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
+# Volumes to share
+VOLUME ["/var/www", "/var/log/nginx"]
+WORKDIR /var/www
+
 # grr, ENTRYPOINT resets CMD now
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["nginx", "-g", "daemon off;"]

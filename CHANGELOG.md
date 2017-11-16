@@ -4,7 +4,7 @@
 - Update deprecated MAINTAINER tag to LABEL
 - CircleCI added
 - Messages from entrypoint.sh changed
-- Error and access log now followed to docker logs
+- Volumes definition added
 
 ## 1.13.0 (2017-05-09)
 - Update to nginx 1.13.0
