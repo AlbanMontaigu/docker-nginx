@@ -29,8 +29,10 @@ RUN set -x && \
     rm -f /etc/nginx/conf.d/*.conf
 
 # Custom nginx configuration files
-COPY ./conf/conf.d/proxy.conf /etc/nginx/conf.d/proxy.conf
-COPY ./conf/sites-enabled /etc/nginx/sites-enabled
+COPY ./conf/conf.d/*.conf /etc/nginx/conf.d/
+COPY ./conf/conf.d-disabled /etc/nginx/conf.d-disabled
+COPY ./conf/sites-enabled/*.conf /etc/nginx/sites-enabled/
+COPY ./conf/sites-disabled /etc/nginx/sites-disabled
 COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 
 # Entrypoint to enable live customization
