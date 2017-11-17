@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 
 # Workaround to allow nginx to get dns name server from /etc/resolv.conf
