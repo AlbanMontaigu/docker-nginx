@@ -4,7 +4,9 @@ set -e
 # Workaround to allow nginx to get dns name server from /etc/resolv.conf
 # (this will allow nginx getting dynamically docker embedded dns ip or custom dns config)
 # @see http://serverfault.com/questions/638822/nginx-resolver-address-from-etc-resolv-conf
+echo "[INFO] -----------------------------------------------------------------------"
 echo "[INFO] GENERATING resolv.conf FILE FOR NGINX with the following result:"
+echo "[INFO] -----------------------------------------------------------------------"
 echo resolver $(awk 'BEGIN{ORS=" "} $1=="nameserver" {print $2}' /etc/resolv.conf) ";" > /etc/nginx/conf.d/resolvers.conf
 cat /etc/nginx/conf.d/resolvers.conf
 
@@ -13,6 +15,7 @@ cat /etc/nginx/conf.d/resolvers.conf
 # TODO: can be dynamic thanks to docker-gen
 # TODO: how to dealy with custom user configuration ?
 #
+echo "[INFO] -----------------------------------------------------------------------"
 case "$1" in
     --php-fpm)
         echo "[INFO] Using default php-fpm configuration"
@@ -22,6 +25,7 @@ case "$1" in
     *) echo "[INFO] Using default configuration"
         ;;
 esac
+echo "[INFO] -----------------------------------------------------------------------"
 
 # Exec main command
 exec "$@"
