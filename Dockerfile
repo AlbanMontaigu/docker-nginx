@@ -37,7 +37,7 @@ COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 # Volumes to share
-VOLUME ["/var/www", "/var/log/nginx"]
+VOLUME ["/var/www", "/var/log/nginx", "/var/run/php"]
 WORKDIR /var/www
 
 # grr, ENTRYPOINT resets CMD now

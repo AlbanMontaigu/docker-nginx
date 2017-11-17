@@ -8,6 +8,7 @@
 - Ensure www-data user exists and is used for php compatibility
 - Other configuration and site samples included
 - `NGINX_MODE` option added
+- Now php fpm sock is in a volume to allow share with php fpm backend in a sock mode
 
 ## 1.13.0 (2017-05-09)
 - Update to nginx 1.13.0
