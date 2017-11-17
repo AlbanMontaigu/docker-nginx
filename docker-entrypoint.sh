@@ -37,3 +37,4 @@ esac
 
 # Exec main command
 exec "$@"
+
