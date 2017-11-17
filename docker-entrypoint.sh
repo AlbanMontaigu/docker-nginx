@@ -13,19 +13,27 @@ cat /etc/nginx/conf.d/resolvers.conf
 #
 # Checking witch configuration mode to follow
 # TODO: can be dynamic thanks to docker-gen
-# TODO: how to dealy with custom user configuration ?
+# TODO: how to deal with custom user configuration ?
 #
 echo "[INFO] -----------------------------------------------------------------------"
-case "$1" in
-    --php-fpm)
+echo "[INFO] Selecting appropriate NGINX_MODE"
+echo "[INFO] -----------------------------------------------------------------------"
+case "${NGINX_MODE}" in
+    "php-fpm")
         echo "[INFO] Using default php-fpm configuration"
-        mv /etc/nginx/sites-enabled/default.conf /etc/nginx/sites-disabled/default.conf
-        mv /etc/nginx/sites-disabled/default-php-fpm.conf /etc/nginx/sites-enabled/default-php-fpm.conf
+        rm /etc/nginx/sites-enabled/default.conf
+        mv -f /etc/nginx/sites-disabled/default-php-fpm.conf /etc/nginx/sites-enabled/default-php-fpm.conf
+        ;;
+    "reverse-proxy")
+        echo "[INFO] Using default reverse-proxy configuration"
+        rm /etc/nginx/sites-enabled/default.conf
+        mv -f /etc/nginx/sites-disabled/default-reverse-proxy.conf /etc/nginx/sites-enabled/default-reverse-proxy.conf
+        sed -i -e "s|NGINX_BACKEND_URL|${NGINX_BACKEND_URL}|g" /etc/nginx/sites-enabled/default-reverse-proxy.conf
         ;;
     *) echo "[INFO] Using default configuration"
         ;;
 esac
-echo "[INFO] -----------------------------------------------------------------------"
+
 
 # Exec main command
 exec "$@"

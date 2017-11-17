@@ -7,7 +7,7 @@
 - Volumes definition added
 - Ensure www-data user exists and is used for php compatibility
 - Other configuration and site samples included
-- `--php-fpm` option added
+- `NGINX_MODE` option added
 
 ## 1.13.0 (2017-05-09)
 - Update to nginx 1.13.0
