@@ -22,12 +22,12 @@ case "${NGINX_MODE}" in
     "php-fpm")
         echo "[INFO] Using default php-fpm configuration"
         rm -f /etc/nginx/sites-enabled/default.conf
-        mv -f /etc/nginx/sites-disabled/default-php-fpm.conf /etc/nginx/sites-enabled/default-php-fpm.conf
+        cp -f /etc/nginx/sites-disabled/default-php-fpm.conf /etc/nginx/sites-enabled/default-php-fpm.conf
         ;;
     "reverse-proxy")
         echo "[INFO] Using default reverse-proxy configuration"
         rm -f /etc/nginx/sites-enabled/default.conf
-        mv -f /etc/nginx/sites-disabled/default-reverse-proxy.conf /etc/nginx/sites-enabled/default-reverse-proxy.conf
+        cp -f /etc/nginx/sites-disabled/default-reverse-proxy.conf /etc/nginx/sites-enabled/default-reverse-proxy.conf
         sed -i -e "s|NGINX_BACKEND_URL|${NGINX_BACKEND_URL}|g" /etc/nginx/sites-enabled/default-reverse-proxy.conf
         ;;
     *) echo "[INFO] Using default configuration"
