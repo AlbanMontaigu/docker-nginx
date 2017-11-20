@@ -10,6 +10,7 @@
 - `NGINX_MODE` option added
 - Now php fpm sock is in a volume to allow share with php fpm backend in a sock mode
 - Now php-fpm mode by default instead of reverse proxy
+- Proxy cache disabled by default
 
 ## 1.13.0 (2017-05-09)
 - Update to nginx 1.13.0
